@@ -1,6 +1,9 @@
 export const outputBus = new EventTarget();
 
 export const model = {
+  choseHand(hand){
+    this.userHand = hand;
+  },
   play(){
     if(this.playing){
       return
@@ -12,5 +15,5 @@ export const model = {
     outputBus.dispatchEvent(new CustomEvent('start-round'));
     this.playing = true;
   },
-  playing: false
+  userHand: null, playing: false
 };

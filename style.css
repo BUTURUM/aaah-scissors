@@ -33,6 +33,12 @@ button{
   width: 2rem;
   height: 2rem;
 }
+.action-button:disabled:not(.selected){
+  opacity: .5;
+}
+.action-button.selected{
+  background-color: #766CAA;
+}
 .action-button > svg{
   fill: white;
   width: 100%;

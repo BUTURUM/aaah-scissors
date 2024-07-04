@@ -9,4 +9,8 @@ outputBus.addEventListener('start-round', () => {
 outputBus.addEventListener('stop-round', () => {
   playingReset();
 });
+
+inputBus.addEventListener('chose-hand', (event) => {
+  model.choseHand(event.detail.hand);
+});
 inputBus.addEventListener('play-game', () => model.play());
