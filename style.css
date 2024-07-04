@@ -1,0 +1,29 @@
+body{
+  margin: 0;
+  padding: 0;
+  background-color: #4847C4;
+}
+button{
+  border: none;
+  background: none;
+  font: inherit;
+}
+
+/*actions*/
+#action-panel{
+  display: flex;
+  justify-content: space-evenly;
+}
+.action-button{
+  border-radius: 50%;
+  background-color: #363593;
+  padding: 10px;
+  box-sizing: content-box;
+  width: 2rem;
+  height: 2rem;
+}
+.action-button > svg{
+  fill: white;
+  width: 100%;
+  vertical-align: middle;
+}
