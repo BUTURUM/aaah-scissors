@@ -46,32 +46,31 @@ button{
   width: 35%;
   max-width: 240px;
   overflow-x: clip;
-  position: relative;
 }
 .hand-box > img{
   width: 100%;
   vertical-align: middle;
 }
-.hand-box.right{
+.hand-box.right > img{
   rotate: -45deg;
 }
-.hand-box.left{
+.hand-box.left > img{
   scale: -1 1;
   rotate: 45deg;
 }
 
 @keyframes shake {
   from{
-    top: 0;
+    translate: 0;
   }
   30%{
-    top: var(--down-move);
+    translate: 0 var(--down-move);
   }
   70%{
-    top: calc(var(--up-move) * -1);
+    translate: 0 calc(var(--up-move) * -1);
   }
   to{
-    top: 0;
+    translate: 0;
   }
 }
 
