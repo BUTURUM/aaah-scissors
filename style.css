@@ -27,3 +27,46 @@ button{
   width: 100%;
   vertical-align: middle;
 }
+
+/*hands*/
+#hand-fight{
+  display: flex;
+  justify-content: space-around;
+  padding-top: 2vh;
+  padding-bottom: 9vh;
+}
+.hand-box.shaking{
+  animation: shake 575ms ease-out 4;
+}
+.hand-box{
+  width: 35%;
+  max-width: 240px;
+  overflow-x: clip;
+  position: relative;
+}
+.hand-box > img{
+  width: 100%;
+  vertical-align: middle;
+}
+.hand-box.right{
+  rotate: -45deg;
+}
+.hand-box.left{
+  scale: -1 1;
+  rotate: 45deg;
+}
+
+@keyframes shake {
+  from{
+    top: 0;
+  }
+  30%{
+    top: 9vh;
+  }
+  70%{
+    top: -5vh;
+  }
+  to{
+    top: 0;
+  }
+}
