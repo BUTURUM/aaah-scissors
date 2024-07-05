@@ -36,6 +36,7 @@ export function playingStart(){
   resetActionPanel();
 
   changePlayerHand();
+  changeComputerHand();
 
   playButton.hidden = true;
 }
