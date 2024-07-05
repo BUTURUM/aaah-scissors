@@ -2,6 +2,7 @@ const playerHand = document.querySelector('.hand-box.left');
 const computerHand = document.querySelector('.hand-box.right');
 const playButton = document.getElementById('play-game');
 const actionPanel = document.getElementById('action-panel');
+const logTitle = document.getElementById('log-title');
 
 const pictures = {
   rock: new Image(), paper: new Image(), scissors: new Image()
@@ -38,6 +39,8 @@ export function playingStart(){
   changePlayerHand();
   changeComputerHand();
 
+  logTitle.innerText = '';
+
   playButton.hidden = true;
 }
 export function playingReset(){
@@ -47,6 +50,19 @@ export function playingReset(){
   lockActionPanel();
 
   playButton.hidden = false;
+}
+
+export function logOutcome(outcome){
+  if(!outcome){
+    logTitle.innerText = "You haven't chosen hand.";
+    return;
+  }
+  let messages = {
+    'victory': "You won, good job!",
+    'defeat': "You lost, we're sorry(",
+    'draw': "Just a draw, man"
+  }
+  logTitle.innerText = messages[outcome]
 }
 
 function changeHand(el, hand){

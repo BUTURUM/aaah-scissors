@@ -1,6 +1,6 @@
 import {model, outputBus} from './model.js';
 import {
-  playingReset, playingStart, inputBus, changePlayerHand, changeComputerHand
+  playingReset, playingStart, inputBus, changePlayerHand, changeComputerHand, logOutcome
 } from './view.js';
 
 outputBus.addEventListener('start-round', () => {
@@ -16,7 +16,7 @@ outputBus.addEventListener('stop-round', () => {
   changePlayerHand(model.user.hand);
   changeComputerHand(model.computer.hand);
 
-  console.log(model.user.score, model.computer.score, outcome);
+  logOutcome(outcome);
 });
 
 inputBus.addEventListener('chose-hand', (event) => {
