@@ -1,5 +1,8 @@
 const playerHand = document.querySelector('.hand-box.left');
 const computerHand = document.querySelector('.hand-box.right');
+const playerCount = document.querySelector('.score-box.left > .score-count');
+const computerCount = document.querySelector('.score-box.right > .score-count');
+
 const playButton = document.getElementById('play-game');
 const actionPanel = document.getElementById('action-panel');
 const logTitle = document.getElementById('log-title');
@@ -52,17 +55,19 @@ export function playingReset(){
   playButton.hidden = false;
 }
 
-export function logOutcome(outcome){
-  if(!outcome){
-    logTitle.innerText = "You haven't chosen hand.";
-    return;
-  }
-  let messages = {
+export function logOutcome(outcome, playerScore, computerScore){
+  const messages = {
     'victory': "You won, good job!",
     'defeat': "You lost, we're sorry(",
     'draw': "Just a draw, man"
   }
-  logTitle.innerText = messages[outcome]
+  if(!outcome){
+    logTitle.innerText = "You haven't chosen hand.";
+  } else{
+    logTitle.innerText = messages[outcome];
+  }
+  playerCount.innerText = playerScore;
+  computerCount.innerText = computerScore;
 }
 
 function changeHand(el, hand){

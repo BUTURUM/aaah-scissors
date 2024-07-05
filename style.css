@@ -20,16 +20,17 @@ p, body{
   --down-move: 9vh;
   --up-move: 5vh;
 }
-
 #action-panel, #play-box{
   margin-top: 30px;
+}
+#score-board, #log-title, #hand-fight{
+  margin-top: 20px;
 }
 
 /*log title*/
 #log-title{
   text-align: center;
   font-size: x-large;
-  margin: 10px 0;
 }
 #log-title:empty::before{
   content: "\A0";
@@ -112,6 +113,24 @@ p, body{
   border-radius: 4px;
 }
 
+/*score*/
+#score-board{
+  display: flex;
+  justify-content: space-around;
+}
+.score-box{
+  padding: 15px;
+  background-color: white;
+  border-radius: 5px;
+  text-align: center;
+  color: #22225E;
+  width: 4rem;
+}
+.score-count{
+  font-size: xxx-large;
+  font-weight: bold;
+}
+
 @media (min-width: 640px){
   :root{
     --down-move: 18vh;
@@ -124,10 +143,13 @@ p, body{
   #action-panel{
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    padding: 20px 0;
+    justify-content: flex-end;
+    gap: 8vh;
   }
   #action-panel, #play-box{
     margin-top: 0;
+  }
+  .score-box{
+    width: 5rem;
   }
 }

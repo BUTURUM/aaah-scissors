@@ -16,7 +16,7 @@ outputBus.addEventListener('stop-round', () => {
   changePlayerHand(model.user.hand);
   changeComputerHand(model.computer.hand);
 
-  logOutcome(outcome);
+  logOutcome(outcome, model.user.score, model.computer.score);
 });
 
 inputBus.addEventListener('chose-hand', (event) => {
