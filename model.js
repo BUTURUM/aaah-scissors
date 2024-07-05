@@ -4,6 +4,9 @@ export const model = {
   choseHand(hand){
     this.userHand = hand;
   },
+  resetHand(){
+    this.userHand = null;
+  },
   play(){
     if(this.playing){
       return

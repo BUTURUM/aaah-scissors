@@ -3,6 +3,16 @@ const computerHand = document.querySelector('.hand-box.right');
 const playButton = document.getElementById('play-game');
 const actionPanel = document.getElementById('action-panel');
 
+const pictures = {
+  rock: new Image(), paper: new Image(), scissors: new Image()
+}
+pictures.rock.src = 'icons/rock-hand.svg';
+pictures.paper.src = 'icons/paper-hand.svg';
+pictures.scissors.src = 'icons/scissors-hand.svg';
+
+playerHand.append(pictures.rock.cloneNode());
+computerHand.append(pictures.rock.cloneNode());
+
 function lockActionPanel(){
   for(let actionButton of actionPanel.children){
     actionButton.disabled = true;
@@ -25,6 +35,8 @@ export function playingStart(){
 
   resetActionPanel();
 
+  changePlayerHand();
+
   playButton.hidden = true;
 }
 export function playingReset(){
@@ -35,6 +47,16 @@ export function playingReset(){
 
   playButton.hidden = false;
 }
+
+function changeHand(el, hand){
+  if(hand){
+    el.replaceChildren(pictures[hand].cloneNode());
+  } else{
+    el.replaceChildren(pictures.rock.cloneNode());
+  }
+}
+export const changePlayerHand = (hand) => changeHand(playerHand, hand);
+export const changeComputerHand = (hand) => changeHand(computerHand, hand);
 
 playButton.addEventListener('click', () => {
   inputBus.dispatchEvent(new CustomEvent('play-game'));
