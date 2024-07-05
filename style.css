@@ -16,8 +16,9 @@ button{
   --down-move: 9vh;
   --up-move: 5vh;
 }
-#bottom{
-  text-align: center;
+
+#action-panel, #play-box{
+  margin-top: 30px;
 }
 
 /*actions*/
@@ -28,7 +29,7 @@ button{
 .action-button{
   border-radius: 50%;
   background-color: #363593;
-  padding: 10px;
+  padding: 15px;
   box-sizing: content-box;
   width: 2rem;
   height: 2rem;
@@ -87,6 +88,9 @@ button{
 }
 
 /*start button*/
+#play-box{
+  text-align: center;
+}
 #play-game{
   color: white;
   border: 2px white solid;
@@ -109,5 +113,8 @@ button{
     align-items: center;
     justify-content: space-between;
     padding: 20px 0;
+  }
+  #action-panel, #play-box{
+    margin-top: 0;
   }
 }
