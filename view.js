@@ -84,7 +84,7 @@ playButton.addEventListener('click', () => {
   inputBus.dispatchEvent(new CustomEvent('play-game'));
 });
 window.addEventListener('keyup', (event) => {
-  if(event.key === ' '){
+  if(event.key === "\s"){
     inputBus.dispatchEvent(new CustomEvent('play-game'));
   }
 });
