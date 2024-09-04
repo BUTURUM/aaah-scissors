@@ -89,17 +89,13 @@ window.addEventListener('keyup', (event) => {
   }
 });
 
-actionPanel.addEventListener('click', (event) => {
-  let composedPath = event.composedPath();
-  for(let i = 0; composedPath[i] !== actionPanel; i++){
-    if(!composedPath[i].hasAttribute('data-hand')){
-      continue
-    }
-    composedPath[i].classList.add('selected');
+actionPanel.querySelectorAll('button').forEach(button => {
+  button.addEventListener('click', function(){
+    this.classList.add('selected');
     lockActionPanel();
 
     inputBus.dispatchEvent(new CustomEvent('chose-hand', {
-      detail: {hand: composedPath[i].getAttribute('data-hand')}
+      detail: {hand: this.getAttribute('data-hand')}
     }));
-  }
+  });
 });
